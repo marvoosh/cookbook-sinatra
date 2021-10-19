@@ -8,5 +8,18 @@ configure :development do
 end
 
 get '/' do
-  'Hello world!'
+  erb :index
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/layout' do
+  erb :layout
+end
+
+get '/team/:username' do
+  puts params[:username]
+  "The username is #{params[:username]}"
 end
